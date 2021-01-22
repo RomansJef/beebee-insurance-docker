@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: aqua;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.body {
+  margin-top: 20px;
+}
+
+.col-1 {
+  display: contents;
+  justify-content: center;
+}
+
+.col-2 {
+  display: contents;
+  justify-content: center;
+}
+
+.nav-item {
+  font: 15px arial, sans-serif;
+  /*background-color: #61dafb;*/
+  width: 100px;
+  height: 50px;
+}

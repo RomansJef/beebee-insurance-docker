@@ -1,0 +1,729 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [{
+            "url": "http://localhost:8800",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/offers": {
+            "get": {
+                "tags": ["ins-broker-controller"],
+                "operationId": "getAllOffers",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAllOffersResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offersbyrequestid": {
+            "get": {
+                "tags": ["ins-broker-controller"],
+                "operationId": "getOffersByRequestId",
+                "parameters": [{
+                        "name": "offers",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/GetOffersByRequestIdRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetOffersByRequestIdResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/newoffer": {
+            "post": {
+                "tags": ["ins-broker-controller"],
+                "operationId": "createNewOffer",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewOfferRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewOfferResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/deleteoffer": {
+            "post": {
+                "tags": ["ins-broker-controller"],
+                "operationId": "deleteOfferById",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeleteOfferByIdRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteOfferByIdResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/updateoffer": {
+            "patch": {
+                "tags": ["ins-broker-controller"],
+                "operationId": "updateOffer",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateOfferRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateOfferResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/swagger-resources/configuration/ui": {
+            "get": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_4",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_6",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_5",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_1",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "head": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_3",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_2",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/swagger-resources/configuration/security": {
+            "get": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_4",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_6",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_5",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_1",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "head": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_3",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_2",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/swagger-resources": {
+            "get": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_4",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_6",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_5",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_1",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "head": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_3",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_2",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetAllOffersResponse": {
+                "type": "object",
+                "properties": {
+                    "offersList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OffersEntity"
+                        }
+                    }
+                }
+            },
+            "OffersEntity": {
+                "required": ["carMake", "carPrice", "deductible", "docNumber", "id", "insSum", "makeYear", "ownerName", "plateNumber", "requestId"],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "plateNumber": {
+                        "type": "string"
+                    },
+                    "docNumber": {
+                        "type": "string"
+                    },
+                    "carMake": {
+                        "type": "string"
+                    },
+                    "makeYear": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "ownerName": {
+                        "type": "string"
+                    },
+                    "requestId": {
+                        "type": "string"
+                    },
+                    "carPrice": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "insSum": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "deductible": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "premium": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "GetOffersByRequestIdRequest": {
+                "required": ["requestId"],
+                "type": "object",
+                "properties": {
+                    "requestId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetOffersByRequestIdResponse": {
+                "type": "object",
+                "properties": {
+                    "offersByRequestId": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OffersEntity"
+                        }
+                    }
+                }
+            },
+            "NewOfferRequest": {
+                "required": ["carPrice", "docNumber", "email", "phoneNr", "plateNumber"],
+                "type": "object",
+                "properties": {
+                    "plateNumber": {
+                        "type": "string"
+                    },
+                    "docNumber": {
+                        "type": "string"
+                    },
+                    "carPrice": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "phoneNr": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            },
+            "NewOfferResponse": {
+                "type": "object",
+                "properties": {
+                    "offersList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OffersEntity"
+                        }
+                    }
+                }
+            },
+            "DeleteOfferByIdRequest": {
+                "required": ["id"],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "DeleteOfferByIdResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateOfferRequest": {
+                "required": ["id"],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "premium": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "UpdateOfferResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UiConfiguration": {
+                "type": "object",
+                "properties": {
+                    "validatorUrl": {
+                        "type": "string"
+                    },
+                    "docExpansion": {
+                        "type": "string"
+                    },
+                    "apisSorter": {
+                        "type": "string"
+                    },
+                    "defaultModelRendering": {
+                        "type": "string"
+                    },
+                    "requestTimeout": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "supportedSubmitMethods": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "jsonEditor": {
+                        "type": "boolean"
+                    },
+                    "showRequestHeaders": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "SecurityConfiguration": {
+                "type": "object",
+                "properties": {
+                    "clientId": {
+                        "type": "string"
+                    },
+                    "clientSecret": {
+                        "type": "string"
+                    },
+                    "realm": {
+                        "type": "string"
+                    },
+                    "appName": {
+                        "type": "string"
+                    },
+                    "apiKey": {
+                        "type": "string"
+                    },
+                    "apiKeyVehicle": {
+                        "type": "string"
+                    },
+                    "scopeSeparator": {
+                        "type": "string"
+                    },
+                    "apiKeyName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SwaggerResource": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "swaggerVersion": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

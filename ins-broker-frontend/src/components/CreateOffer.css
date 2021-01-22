@@ -1,0 +1,19 @@
+.sect1 {
+    margin-top: 20px;
+}
+
+.sect2 {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+th {
+    border-right: 1.5px solid black;
+}
+
+td {
+    min-width: 50px;
+    border: 1.5px solid black;
+}

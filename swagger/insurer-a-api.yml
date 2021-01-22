@@ -1,0 +1,758 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [{
+            "url": "http://localhost:8181",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/deleteoffer": {
+            "post": {
+                "tags": ["insurer-a-controller"],
+                "operationId": "deleteOfferById",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeleteOfferByIdRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteOfferByIdResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offersbyrequestid": {
+            "get": {
+                "tags": ["insurer-a-controller"],
+                "operationId": "getOffersByRequestId",
+                "parameters": [{
+                        "name": "offers",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/GetOffersByRequestIdRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetOffersByRequestIdResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/updateoffer": {
+            "patch": {
+                "tags": ["insurer-a-controller"],
+                "operationId": "updateOffer",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateOfferRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateOfferResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/newoffer": {
+            "post": {
+                "tags": ["insurer-a-controller"],
+                "operationId": "createNewOffer",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewOfferRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewOfferResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/offers": {
+            "get": {
+                "tags": ["insurer-a-controller"],
+                "operationId": "getAllOffers",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAllOffersResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/swagger-resources/configuration/ui": {
+            "get": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_1",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_6",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_4",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_5",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_2",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "head": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration_3",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["api-resource-controller"],
+                "operationId": "uiConfiguration",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UiConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/swagger-resources/configuration/security": {
+            "get": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_1",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_6",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_4",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_5",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_2",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "head": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration_3",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["api-resource-controller"],
+                "operationId": "securityConfiguration",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SecurityConfiguration"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/swagger-resources": {
+            "get": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_1",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_6",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_4",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_5",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "options": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_2",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "head": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources_3",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["api-resource-controller"],
+                "operationId": "swaggerResources",
+                "responses": {
+                    "200": {
+                        "description": "default response",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SwaggerResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "DeleteOfferByIdRequest": {
+                "required": ["id"],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "DeleteOfferByIdResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetOffersByRequestIdRequest": {
+                "required": ["requestId"],
+                "type": "object",
+                "properties": {
+                    "requestId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetOffersByRequestIdResponse": {
+                "type": "object",
+                "properties": {
+                    "offersByRequestId": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OffersEntity"
+                        }
+                    }
+                }
+            },
+            "OffersEntity": {
+                "required": ["carMake", "carPrice", "deductible", "docNumber", "id", "insSum", "makeYear", "ownerName", "plateNumber", "requestId"],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "plateNumber": {
+                        "type": "string"
+                    },
+                    "docNumber": {
+                        "type": "string"
+                    },
+                    "carMake": {
+                        "type": "string"
+                    },
+                    "makeYear": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "ownerName": {
+                        "type": "string"
+                    },
+                    "requestId": {
+                        "type": "string"
+                    },
+                    "carPrice": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "insSum": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "deductible": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "premium": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "UpdateOfferRequest": {
+                "required": ["id"],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "premium": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "UpdateOfferResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "NewOfferRequest": {
+                "required": ["carPrice", "docNumber", "plateNumber", "requestId"],
+                "type": "object",
+                "properties": {
+                    "plateNumber": {
+                        "type": "string"
+                    },
+                    "docNumber": {
+                        "type": "string"
+                    },
+                    "requestId": {
+                        "type": "string"
+                    },
+                    "carPrice": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "NewOfferResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "plateNumber": {
+                        "type": "string"
+                    },
+                    "docNumber": {
+                        "type": "string"
+                    },
+                    "carMake": {
+                        "type": "string"
+                    },
+                    "makeYear": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "ownerName": {
+                        "type": "string"
+                    },
+                    "requestId": {
+                        "type": "string"
+                    },
+                    "carPrice": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "insSum": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "deductible": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "premium": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "GetAllOffersResponse": {
+                "type": "object",
+                "properties": {
+                    "offersList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/OffersEntity"
+                        }
+                    }
+                }
+            },
+            "UiConfiguration": {
+                "type": "object",
+                "properties": {
+                    "validatorUrl": {
+                        "type": "string"
+                    },
+                    "docExpansion": {
+                        "type": "string"
+                    },
+                    "apisSorter": {
+                        "type": "string"
+                    },
+                    "defaultModelRendering": {
+                        "type": "string"
+                    },
+                    "requestTimeout": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "supportedSubmitMethods": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "jsonEditor": {
+                        "type": "boolean"
+                    },
+                    "showRequestHeaders": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "SecurityConfiguration": {
+                "type": "object",
+                "properties": {
+                    "clientId": {
+                        "type": "string"
+                    },
+                    "clientSecret": {
+                        "type": "string"
+                    },
+                    "realm": {
+                        "type": "string"
+                    },
+                    "appName": {
+                        "type": "string"
+                    },
+                    "apiKey": {
+                        "type": "string"
+                    },
+                    "apiKeyVehicle": {
+                        "type": "string"
+                    },
+                    "scopeSeparator": {
+                        "type": "string"
+                    },
+                    "apiKeyName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SwaggerResource": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "swaggerVersion": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

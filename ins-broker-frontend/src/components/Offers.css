@@ -1,0 +1,8 @@
+th {
+    border-right: 1.5px solid black;
+}
+
+td {
+    min-width: 50px;
+    border: 1.5px solid black;
+}

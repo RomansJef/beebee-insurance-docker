@@ -1,0 +1,91 @@
+version: '3.3'
+
+networks:
+    default:
+        ipam:
+           config:
+               - subnet: 192.168.1.100/24
+services:
+    ins-broker-frontend:
+        image: beebeeinsurance/ins-broker-frontend
+        build: ins-broker-frontend
+        ports: 
+            - 3000:3000
+        networks:
+            default:
+                ipv4_address: 192.168.1.102
+    insurance-broker:
+        image: beebeeinsurance/insurance-broker
+        build: insurance-broker
+        restart: unless-stopped
+        ports:
+            - "8800:8800"
+        networks:
+            default:
+                ipv4_address: 192.168.1.103
+        entrypoint:
+            - java
+            - -jar
+            - insurance-broker-1.0-SNAPSHOT.jar
+        environment:
+            - INSURERA_OFFER_URL=http://192.168.1.104:8181/newoffer
+            - INSURERB_OFFER_URL=http://192.168.1.105:8282/newoffer
+    insurer-a:
+        image: beebeeinsurance/insurer-a
+        build: insurer-a
+        restart: unless-stopped
+        ports:
+            - "8181:8181"
+        networks:
+            default:
+                ipv4_address: 192.168.1.104
+        entrypoint:
+            - java
+            - -jar
+            - insurer-a-1.0-SNAPSHOT.jar
+        environment:
+            - CAR_DETAILS_URL=http://192.168.1.106:8881/getcar
+    insurer-b:
+        image: beebeeinsurance/insurer-b
+        build: insurer-b
+        restart: unless-stopped
+        ports:
+            - "8282:8282"
+        networks:
+            default:
+                ipv4_address: 192.168.1.105
+        depends_on:
+            - cars-central        
+        entrypoint:
+            - java
+            - -jar
+            - insurer-b-1.0-SNAPSHOT.jar
+        environment:
+            - CAR_DETAILS_URL=http://192.168.1.106:8881/getcar
+    cars-central:
+        image: beebeeinsurance/cars-central
+        build: cars-central
+        restart: unless-stopped
+        ports:
+            - "8881:8881"
+        networks:
+            default:
+                ipv4_address: 192.168.1.106
+        entrypoint:
+            - java
+            - -jar
+            - car-central-1.0-SNAPSHOT.jar
+    swagger-ui:
+        image: swaggerapi/swagger-ui
+        ports:
+            - "8082:8080"
+        networks:
+            default:
+                ipv4_address: 192.168.1.107
+        volumes:
+            - ./swagger:/usr/share/nginx/html
+        environment:
+             URLS: "[ { url: \"/ins-broker-api.yml\", name: \"Insurance Broker\" },
+                    { url: \"/insurer-a-api.yml\", name: \"Insurer A\" },
+                    { url: \"/insurer-b-api.yml\", name: \"Insurer B\" },
+                    { url: \"/cars-central-api.yml\", name: \"Cars Central Repository\" },]"
